@@ -53,6 +53,8 @@ resource assignment 'Microsoft.Authorization/policyAssignments@2022-06-01' = {
                 value: [
                     'uksouth'
                     'ukwest'
+                    'westeurope'
+                    'northeurope'
                 ]
             } 
         }
