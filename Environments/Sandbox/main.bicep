@@ -41,42 +41,6 @@ resource resourceGroupTagsUpdate 'Microsoft.Resources/tags@2021-04-01' = {
   }
 }
 
-// create Allowed locations for resource groups policy for current resource group for uksouth and ukwest
-resource resourceGroupPolicy 'Microsoft.Authorization/policyDefinitions@2020-09-01' = {
-  name: 'Allowed locations for resource groups'
-  scope: subscriptionResourceId('Microsoft.Resources/resourceGroups', resourceGroup().name)
-  properties: {
-    policyType: 'BuiltIn'
-    mode: 'All'
-    displayName: 'Allowed locations for resource groups'
-    description: 'This policy enables you to restrict the locations your organization can specify when deploying resource groups.'
-    policyRule: {
-      if: {
-        allOf: [
-          {
-            field: 'type'
-            equals: 'Microsoft.Resources/subscriptions/resourceGroups'
-          }
-          {
-            not: {
-              field: 'location'
-              in: [
-                'uksouth'
-                'ukwest'
-              ]
-            }
-          }
-        ]
-      }
-      then: {
-        effect: 'deny'
-      }
-    }
-  }
-}
-
-
-
 
 resource budget 'Microsoft.Consumption/budgets@2021-10-01' = {
   name: budgetName
