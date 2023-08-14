@@ -37,6 +37,7 @@ resource resourceGroupTagsUpdate 'Microsoft.Resources/tags@2021-04-01' = {
     tags: {
       budget: 'true'
       stopstart: 'true'
+      env: 'sandbox'
     }
   }
 }
