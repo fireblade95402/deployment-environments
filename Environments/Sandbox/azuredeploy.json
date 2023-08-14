@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.20.4.51522",
-      "templateHash": "2192105245588238"
+      "templateHash": "5507855342910826613"
     }
   },
   "parameters": {
@@ -93,7 +93,9 @@
           "listOfAllowedLocations": {
             "value": [
               "uksouth",
-              "ukwest"
+              "ukwest",
+              "westeurope",
+              "northeurope"
             ]
           }
         }
