@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.20.4.51522",
-      "templateHash": "10653346513203184090"
+      "templateHash": "17293372202351667010"
     }
   },
   "parameters": {
@@ -71,6 +71,17 @@
     }
   },
   "resources": [
+    {
+      "type": "Microsoft.Resources/tags",
+      "apiVersion": "2021-04-01",
+      "name": "default",
+      "properties": {
+        "tags": {
+          "budget": "true",
+          "stopstart": "true"
+        }
+      }
+    },
     {
       "type": "Microsoft.Consumption/budgets",
       "apiVersion": "2021-10-01",
