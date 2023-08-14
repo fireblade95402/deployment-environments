@@ -32,17 +32,17 @@ param contactEmails array
 
 
 
-//add tags stop/start tag to resourceGroupTags
-resource resourceGroupTagsUpdate 'Microsoft.Resources/tags@2021-04-01' = {
-  name: 'default'
-  properties: {
-    tags: {
-      budget: 'true'
-      stopstart: 'true'
-      env: 'sandbox'
-    }
-  }
-}
+// //add tags stop/start tag to resourceGroupTags without overwriting
+// resource resourceGroupTagsUpdate 'Microsoft.Resources/tags@2021-04-01' = {
+//   name: 'default'
+//   properties: {
+//     tags: {
+//       budget: 'true'
+//       stopstart: 'true'
+//       env: 'sandbox'
+//     }
+//   }
+// }
 
 //Valid Locations
 resource assignmentLocations 'Microsoft.Authorization/policyAssignments@2022-06-01' = {
