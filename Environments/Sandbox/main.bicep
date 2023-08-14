@@ -30,19 +30,19 @@ param secondThreshold int = 110
 @description('The list of email addresses to send the budget notification to when the threshold is exceeded.')
 param contactEmails array 
 
+param newTags object = {
+  budget: 'true'
+  stopstart: 'true'
+}
 
 
-// //add tags stop/start tag to resourceGroupTags without overwriting
-// resource resourceGroupTagsUpdate 'Microsoft.Resources/tags@2021-04-01' = {
-//   name: 'default'
-//   properties: {
-//     tags: {
-//       budget: 'true'
-//       stopstart: 'true'
-//       env: 'sandbox'
-//     }
-//   }
-// }
+//add tags stop/start tag to resourceGroupTags without overwriting
+resource resourceGroupTagsUpdate 'Microsoft.Resources/tags@2021-04-01' = {
+  name: 'default'
+  properties: {
+    tags: union(newTags, resourceGroup().tags)
+  }
+}
 
 //Valid Locations
 resource assignmentLocations 'Microsoft.Authorization/policyAssignments@2022-06-01' = {
