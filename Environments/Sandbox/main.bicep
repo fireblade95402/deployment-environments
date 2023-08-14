@@ -44,7 +44,8 @@ resource resourceGroupTagsUpdate 'Microsoft.Resources/tags@2021-04-01' = {
   }
 }
 
-resource assignment 'Microsoft.Authorization/policyAssignments@2022-06-01' = {
+//Valid Locations
+resource assignmentLocations 'Microsoft.Authorization/policyAssignments@2022-06-01' = {
     name: 'Allowed Locations'
     properties: {
         policyDefinitionId: '/providers/Microsoft.Authorization/policyDefinitions/e56962a6-4747-49cd-b67b-bf8b01975c4c'
@@ -59,6 +60,14 @@ resource assignment 'Microsoft.Authorization/policyAssignments@2022-06-01' = {
             } 
         }
     }
+}
+
+// Network interfaces should not have public IPs
+resource assignmentNoPublic 'Microsoft.Authorization/policyAssignments@2022-06-01' = {
+  name: 'Network interfaces should not have public IPs'
+  properties: {
+      policyDefinitionId: '/providers/Microsoft.Authorization/policyDefinitions/83a86a26-fd1f-447c-b59d-e51f44264114'
+  }
 }
 
 resource budget 'Microsoft.Consumption/budgets@2021-10-01' = {
