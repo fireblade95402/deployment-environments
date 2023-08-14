@@ -30,6 +30,13 @@ param secondThreshold int = 110
 @description('The list of email addresses to send the budget notification to when the threshold is exceeded.')
 param contactEmails array 
 
+//reference current resource group
+resource resourceGroup 'Microsoft.Resources/resourceGroups@2021-04-01' existing = {
+  name: 'default'
+  scope: subscription()
+}
+
+
 //add tags stop/start tag to resourceGroupTags
 resource resourceGroupTagsUpdate 'Microsoft.Resources/tags@2021-04-01' = {
   name: 'default'
@@ -41,6 +48,22 @@ resource resourceGroupTagsUpdate 'Microsoft.Resources/tags@2021-04-01' = {
     }
   }
 }
+
+resource assignment 'Microsoft.Authorization/policyAssignments@2022-06-01' = {
+    name: 'Allowed Locations'
+    properties: {
+        policyDefinitionId: '/providers/Microsoft.Authorization/policyDefinitions/e56962a6-4747-49cd-b67b-bf8b01975c4c'
+        parameters:{
+            listOfAllowedLocations: {
+                value: [
+                    'uksouth'
+                    'ukwest'
+            } 
+        }
+    }
+}
+
+output assignmentId string = assignment.id
 
 
 resource budget 'Microsoft.Consumption/budgets@2021-10-01' = {
