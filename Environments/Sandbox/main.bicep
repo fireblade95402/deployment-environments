@@ -1,4 +1,4 @@
-// Copyright (c) Microsoft Corporation.
+// Copyright (c) Microsoft Corporation. 
 // Licensed under the MIT License.
 @description('Name of the Budget. It should be unique within a resource group.')
 param budgetName string = '${resourceGroup().name}-budget'
