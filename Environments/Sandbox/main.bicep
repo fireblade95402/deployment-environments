@@ -58,13 +58,11 @@ resource assignment 'Microsoft.Authorization/policyAssignments@2022-06-01' = {
                 value: [
                     'uksouth'
                     'ukwest'
+                ]
             } 
         }
     }
 }
-
-output assignmentId string = assignment.id
-
 
 resource budget 'Microsoft.Consumption/budgets@2021-10-01' = {
   name: budgetName
@@ -92,3 +90,4 @@ resource budget 'Microsoft.Consumption/budgets@2021-10-01' = {
     }
   }
 }
+
