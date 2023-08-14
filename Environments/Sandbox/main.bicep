@@ -46,7 +46,6 @@ resource resourceGroupTagsUpdate 'Microsoft.Resources/tags@2021-04-01' = {
 
 resource assignment 'Microsoft.Authorization/policyAssignments@2022-06-01' = {
     name: 'Allowed Locations'
-    scope: resourceGroup()
     properties: {
         policyDefinitionId: '/providers/Microsoft.Authorization/policyDefinitions/e56962a6-4747-49cd-b67b-bf8b01975c4c'
         parameters:{
