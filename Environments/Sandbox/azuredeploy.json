@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.20.4.51522",
-      "templateHash": "16944836487259128676"
+      "templateHash": "2192105245588238"
     }
   },
   "parameters": {
@@ -80,6 +80,22 @@
           "budget": "true",
           "stopstart": "true",
           "env": "sandbox"
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "apiVersion": "2022-06-01",
+      "name": "Allowed Locations",
+      "properties": {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/e56962a6-4747-49cd-b67b-bf8b01975c4c",
+        "parameters": {
+          "listOfAllowedLocations": {
+            "value": [
+              "uksouth",
+              "ukwest"
+            ]
+          }
         }
       }
     },
