@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.20.4.51522",
-      "templateHash": "5507855342910826613"
+      "templateHash": "3519588247527677927"
     }
   },
   "parameters": {
@@ -99,6 +99,14 @@
             ]
           }
         }
+      }
+    },
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "apiVersion": "2022-06-01",
+      "name": "Network interfaces should not have public IPs",
+      "properties": {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/83a86a26-fd1f-447c-b59d-e51f44264114"
       }
     },
     {
