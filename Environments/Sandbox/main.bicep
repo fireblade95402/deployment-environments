@@ -30,11 +30,6 @@ param secondThreshold int = 110
 @description('The list of email addresses to send the budget notification to when the threshold is exceeded.')
 param contactEmails array 
 
-//reference current resource group
-resource resourceGroup 'Microsoft.Resources/resourceGroups@2021-04-01' existing = {
-  name: 'default'
-  scope: subscription()
-}
 
 
 //add tags stop/start tag to resourceGroupTags
