@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.20.4.51522",
-      "templateHash": "2602030565323831669"
+      "templateHash": "14244583650426347531"
     }
   },
   "parameters": {
@@ -117,7 +117,12 @@
       "apiVersion": "2022-06-01",
       "name": "App Service app slots should disable public network access",
       "properties": {
-        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/701a595d-38fb-4a66-ae6d-fb3735217622"
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/701a595d-38fb-4a66-ae6d-fb3735217622",
+        "parameters": {
+          "effort": {
+            "value": "deny"
+          }
+        }
       }
     },
     {
