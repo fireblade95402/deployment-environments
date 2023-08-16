@@ -70,7 +70,7 @@ resource assignmentNoPublic 'Microsoft.Authorization/policyAssignments@2022-06-0
   }
 }
 
-// Network interfaces should not have public IPs
+// App Service not public access
 resource assignmentNoPublicAppService 'Microsoft.Authorization/policyAssignments@2022-06-01' = {
   name: 'App Service app slots should disable public network access'
   properties: {
