@@ -80,7 +80,7 @@ resource assignmentNoPublicAppService 'Microsoft.Authorization/policyAssignments
   name: 'App Service app slots should disable public network access'
   properties: {
       displayName: 'App Service app slots should disable public network access'
-      policyDefinitionId: '/providers/Microsoft.Authorization/policyDefinitions/701a595d-38fb-4a66-ae6d-fb3735217622'
+      policyDefinitionId: '/providers/Microsoft.Authorization/policyDefinitions/1b5ef780-c53c-4a64-87f3-bb9c8c8094ba'
       enforcementMode: 'Default'
       parameters:{
         effect: {
