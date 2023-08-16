@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.20.4.51522",
-      "templateHash": "3421700895162935158"
+      "templateHash": "1860253382858484391"
     }
   },
   "parameters": {
@@ -68,9 +68,24 @@
       "metadata": {
         "description": "The list of email addresses to send the budget notification to when the threshold is exceeded."
       }
+    },
+    "newTags": {
+      "type": "object",
+      "defaultValue": {
+        "budget": "true",
+        "stopstart": "true"
+      }
     }
   },
   "resources": [
+    {
+      "type": "Microsoft.Resources/tags",
+      "apiVersion": "2021-04-01",
+      "name": "default",
+      "properties": {
+        "tags": "[union(parameters('newTags'), resourceGroup().tags)]"
+      }
+    },
     {
       "type": "Microsoft.Authorization/policyAssignments",
       "apiVersion": "2022-06-01",
