@@ -49,6 +49,7 @@ resource resourceGroupTagsUpdate 'Microsoft.Resources/tags@2021-04-01' = {
 resource assignmentLocations 'Microsoft.Authorization/policyAssignments@2022-06-01' = {
     name: 'Allowed Locations'
     properties: {
+        displayName: 'Allowed Locations'
         policyDefinitionId: '/providers/Microsoft.Authorization/policyDefinitions/e56962a6-4747-49cd-b67b-bf8b01975c4c'
         enforcementMode: 'Default'
         parameters:{
@@ -68,6 +69,7 @@ resource assignmentLocations 'Microsoft.Authorization/policyAssignments@2022-06-
 resource assignmentNoPublic 'Microsoft.Authorization/policyAssignments@2022-06-01' = {
   name: 'Network interfaces should not have public IPs'
   properties: {
+      displayName: 'Network interfaces should not have public IPs'
       policyDefinitionId: '/providers/Microsoft.Authorization/policyDefinitions/83a86a26-fd1f-447c-b59d-e51f44264114'
       enforcementMode: 'Default'
   }
@@ -77,6 +79,7 @@ resource assignmentNoPublic 'Microsoft.Authorization/policyAssignments@2022-06-0
 resource assignmentNoPublicAppService 'Microsoft.Authorization/policyAssignments@2022-06-01' = {
   name: 'App Service app slots should disable public network access'
   properties: {
+      displayName: 'App Service app slots should disable public network access'
       policyDefinitionId: '/providers/Microsoft.Authorization/policyDefinitions/701a595d-38fb-4a66-ae6d-fb3735217622'
       enforcementMode: 'Default'
       parameters:{
