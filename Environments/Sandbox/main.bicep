@@ -35,6 +35,7 @@ param newTags object = {
   stopstart: 'true'
 }
 
+//Policy Documentation is here: https://learn.microsoft.com/en-us/azure/templates/microsoft.authorization/policyassignments?pivots=deployment-language-bicep
 
 //add tags stop/start tag to resourceGroupTags without overwriting
 resource resourceGroupTagsUpdate 'Microsoft.Resources/tags@2021-04-01' = {
