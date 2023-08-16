@@ -70,6 +70,15 @@ resource assignmentNoPublic 'Microsoft.Authorization/policyAssignments@2022-06-0
   }
 }
 
+// Network interfaces should not have public IPs
+resource assignmentNoPublicAppService 'Microsoft.Authorization/policyAssignments@2022-06-01' = {
+  name: 'App Service app slots should disable public network access'
+  properties: {
+      policyDefinitionId: '/providers/Microsoft.Authorization/policyDefinitions/701a595d-38fb-4a66-ae6d-fb3735217622'
+  }
+}
+
+
 resource budget 'Microsoft.Consumption/budgets@2021-10-01' = {
   name: budgetName
   properties: {
