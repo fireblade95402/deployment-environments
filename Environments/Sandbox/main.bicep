@@ -49,6 +49,7 @@ resource assignmentLocations 'Microsoft.Authorization/policyAssignments@2022-06-
     name: 'Allowed Locations'
     properties: {
         policyDefinitionId: '/providers/Microsoft.Authorization/policyDefinitions/e56962a6-4747-49cd-b67b-bf8b01975c4c'
+        enforcementMode: 'deny'
         parameters:{
             listOfAllowedLocations: {
                 value: [
@@ -67,6 +68,7 @@ resource assignmentNoPublic 'Microsoft.Authorization/policyAssignments@2022-06-0
   name: 'Network interfaces should not have public IPs'
   properties: {
       policyDefinitionId: '/providers/Microsoft.Authorization/policyDefinitions/83a86a26-fd1f-447c-b59d-e51f44264114'
+      enforcementMode: 'deny'
   }
 }
 
@@ -75,11 +77,7 @@ resource assignmentNoPublicAppService 'Microsoft.Authorization/policyAssignments
   name: 'App Service app slots should disable public network access'
   properties: {
       policyDefinitionId: '/providers/Microsoft.Authorization/policyDefinitions/701a595d-38fb-4a66-ae6d-fb3735217622'
-      parameters:{
-        effort: {
-            value: 'deny'
-        } 
-    }
+      enforcementMode: 'deny'
   }
 }
 
