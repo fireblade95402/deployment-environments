@@ -79,6 +79,11 @@ resource assignmentNoPublicAppService 'Microsoft.Authorization/policyAssignments
   properties: {
       policyDefinitionId: '/providers/Microsoft.Authorization/policyDefinitions/701a595d-38fb-4a66-ae6d-fb3735217622'
       enforcementMode: 'Default'
+      parameters:{
+        effect: {
+            value: 'Deny'
+        } 
+    }
   }
 }
 
