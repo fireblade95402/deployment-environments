@@ -35,7 +35,6 @@ param newTags object = {
   stopstart: 'true'
 }
 
-//Policy Documentation is here: https://learn.microsoft.com/en-us/azure/templates/microsoft.authorization/policyassignments?pivots=deployment-language-bicep
 
 //add tags stop/start tag to resourceGroupTags without overwriting
 resource resourceGroupTagsUpdate 'Microsoft.Resources/tags@2021-04-01' = {
@@ -44,6 +43,8 @@ resource resourceGroupTagsUpdate 'Microsoft.Resources/tags@2021-04-01' = {
     tags: union(newTags, resourceGroup().tags)
   }
 }
+
+//Policy Documentation is here: https://learn.microsoft.com/en-us/azure/templates/microsoft.authorization/policyassignments?pivots=deployment-language-bicep
 
 //Valid Locations
 resource assignmentLocations 'Microsoft.Authorization/policyAssignments@2022-06-01' = {
@@ -77,9 +78,9 @@ resource assignmentNoPublic 'Microsoft.Authorization/policyAssignments@2022-06-0
 
 // App Service not public access
 resource assignmentNoPublicAppService 'Microsoft.Authorization/policyAssignments@2022-06-01' = {
-  name: 'App Service app slots should disable public network access'
+  name: 'App Service apps should disable public network access'
   properties: {
-      displayName: 'App Service app slots should disable public network access'
+      displayName: 'App Service apps should disable public network access'
       policyDefinitionId: '/providers/Microsoft.Authorization/policyDefinitions/1b5ef780-c53c-4a64-87f3-bb9c8c8094ba'
       enforcementMode: 'Default'
       parameters:{
