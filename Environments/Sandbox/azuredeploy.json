@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.20.4.51522",
-      "templateHash": "4209697331120762924"
+      "templateHash": "1236662886621341538"
     }
   },
   "parameters": {
@@ -92,7 +92,7 @@
       "name": "Allowed Locations",
       "properties": {
         "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/e56962a6-4747-49cd-b67b-bf8b01975c4c",
-        "enforcementMode": "deny",
+        "enforcementMode": "Default",
         "parameters": {
           "listOfAllowedLocations": {
             "value": [
@@ -111,7 +111,7 @@
       "name": "Network interfaces should not have public IPs",
       "properties": {
         "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/83a86a26-fd1f-447c-b59d-e51f44264114",
-        "enforcementMode": "deny"
+        "enforcementMode": "Default"
       }
     },
     {
@@ -120,7 +120,7 @@
       "name": "App Service app slots should disable public network access",
       "properties": {
         "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/701a595d-38fb-4a66-ae6d-fb3735217622",
-        "enforcementMode": "deny"
+        "enforcementMode": "Default"
       }
     },
     {
